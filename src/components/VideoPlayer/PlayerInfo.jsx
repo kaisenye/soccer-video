@@ -1,7 +1,10 @@
 import React from 'react';
 import { formatEventName } from '../../hooks/useVideoPlayer';
 
-function PlayerInfo({ selectedPlayer, selectedHighlight }) {
+function PlayerInfo({ 
+  selectedPlayer, 
+  selectedHighlight 
+}) {
   return (
     <div className="video-player-info-bar">
       <div className="video-player-info-overlay">

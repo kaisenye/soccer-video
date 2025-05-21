@@ -28,6 +28,7 @@ function Page() {
   const { data: players = [], isLoading: playersLoading } = useTeamMembers(selectedTeam);
   
   // Set initial team from URL params
+  // Handles team-only selection 
   useEffect(() => {
     if (teamId && teams.length) {
       setSelectedTeam(teamId);
@@ -41,6 +42,7 @@ function Page() {
   }, [teamId, playerId, teams]);
   
   // Set selected Team and selected player from URL params
+  // Handles when both team and player are selected
   useEffect(() => {
     if (teamId && playerId && players?.length) {
       setSelectedTeam(teamId);
@@ -89,6 +91,8 @@ function Page() {
         setSelectedTeamName={setSelectedTeamName}
       />
       <VideoPlayer selectedPlayer={selectedPlayer} />
+
+      {/* Loading Spinner */}
       {(teamsLoading || playersLoading) 
         && 
         <div className="loading-overlay">
