@@ -1,0 +1,189 @@
+:root {
+  --background-color-primary: var(--background);
+  --background-color-secondary: var(--secondary);
+  --background-color-tertiary: var(--muted);
+  --text-color-primary: var(--foreground);
+  --text-color-secondary: var(--muted-foreground);
+  --border-color: var(--border);
+  --hover-color: var(--accent);
+  --highlight-color: var(--primary);
+  --tag-bg-color: var(--muted);
+  --primary-color: var(--primary, #3b82f6);
+  --primary-color-transparent: rgba(59, 130, 246, 0.7);
+  --controls-bg: rgba(0, 0, 0, 0.7);
+  --controls-text: #ffffff;
+}
+
+.navbar {
+  width: 300px;
+  background-color: var(--background-color-primary);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.team-selection {
+  margin-bottom: 20px;
+}
+
+.team-selection label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-color-primary);
+}
+
+/* Custom dropdown styles */
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.dropdown-header {
+  background-color: var(--background-color-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 10px 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-header:hover {
+  border-color: var(--border-color);
+}
+
+.dropdown-arrow {
+  border: solid var(--text-color-primary);
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(-135deg);
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--background-color-primary);
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-option {
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-option:hover {
+  background-color: var(--background-color-secondary);
+}
+
+/* Players list styles */
+.players-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.players-list-container {
+  background-color: var(--background-color-primary);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.players-list-header {
+  background-color: var(--background-color-tertiary);
+  padding: 10px 15px;
+}
+
+.players-list-header h2 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--text-color-primary);
+}
+
+.players-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+.players-list li {
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--background-color-secondary);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.players-list li:last-child {
+  border-bottom: none;
+}
+
+.players-list li:hover {
+  background-color: var(--background-color-secondary);
+}
+
+.players-list li.selected {
+  background-color: var(--background-color-secondary);
+}
+
+.player-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.player-initials-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.player-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.player-jersey {
+  font-size: 12px;
+  color: var(--text-color-secondary);
+}
+
+.player-name {
+  font-weight: 500;
+  color: var(--text-color-primary);
+}
+
+.no-players, .loading {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-color-secondary);
+} 
